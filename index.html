@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mensagens de Atendimento</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+    .category {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+    .category h2 {
+      margin-top: 0;
+      color: #34495e;
+    }
+    .message {
+      background-color: #ecf0f1;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .copy-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.85rem;
+    }
+    .copy-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mensagens de Atendimento</h1>
+
+  <div class="category">
+    <h2>✅ Cliente Confirmado para Hoje</h2>
+    <div class="message">
+      <p>Status: Confirmado</p>
+      <p>Atendimento fixado para <strong>amanhã (30/03)</strong> no <strong>período da manhã</strong>.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>🚗 Cliente Confirmado - Técnico a Caminho</h2>
+    <div class="message">
+      <p>Status: Confirmado</p>
+      <p>Técnico a caminho.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>❌ Cliente Ausente</h2>
+    <div class="message">
+      <p>Status: Ausente</p>
+      <ul>
+        <li>Técnico compareceu ao local e não foi atendido</li>
+        <li>Tentativas de contato via ramal sem sucesso</li>
+        <li>Deixado comprovante de comparecimento</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>📢 Cliente Retornou Contato Confirmando</h2>
+    <div class="message">
+      <p>Status: Confirmado</p>
+      <p>Cliente retornou confirmando o atendimento.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>⚠️ Sem Contato com o Cliente - Técnico a Caminho</h2>
+    <div class="message">
+      <p>Status: Não Confirmado</p>
+      <ul>
+        <li>Tentativa de contato sem sucesso</li>
+        <li>Técnico irá ao local para verificar se será atendido</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>🔄 Cliente Solicitou Reagendamento</h2>
+    <div class="message">
+      <p>Status: Reagendamento</p>
+      <p>Cliente solicitou o reagendamento para <strong>quarta-feira (19/02)</strong>.</p>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>📱 Atendimento Confirmado via Ligação</h2>
+    <div class="message">
+      <p>Status: Confirmado</p>
+      <ul>
+        <li>Atendimento confirmado com o cliente via ramal (13 99157-3662)</li>
+        <li>Para sexta-feira (20/06), período da manhã</li>
+        <li>Cliente ciente das condições climáticas e necessidade de acompanhante maior de 18 anos</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>📧 Cliente Não Atendeu Ligação - Recado no SMART</h2>
+    <div class="message">
+      <p>Status: Não Confirmado</p>
+      <ul>
+        <li>Tentativa de contato via ramal sem sucesso</li>
+        <li>Deixado informe no SMART aguardando retorno</li>
+        <li>Atendimento fixado para sexta-feira (20/06), período da manhã</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>📩 Cliente Não Atendeu - Recado via WhatsApp</h2>
+    <div class="message">
+      <p>Status: Não Confirmado</p>
+      <ul>
+        <li>Tentativa de contato via ramal sem sucesso</li>
+        <li>Deixado informe no WhatsApp aguardando confirmação</li>
+        <li>Atendimento fixado para segunda-feira (05/05), período da manhã</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>☔️ Reagendamento por Chuva - Cliente Não Ciente</h2>
+    <div class="message">
+      <p>Status: Chuva</p>
+      <ul>
+        <li>Necessário reagendamento devido às condições climáticas</li>
+        <li>Deixado informe no SMART aguardando retorno</li>
+        <li>Atendimento reagendado para amanhã (04/10), tarde a partir das 14h30</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>☔️ Reagendamento por Chuva - Cliente Ciente</h2>
+    <div class="message">
+      <p>Status: Chuva</p>
+      <ul>
+        <li>Necessário reagendamento devido às condições climáticas</li>
+        <li>Cliente ciente que entraremos em contato para reagendar</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>☔️ Reagendamento Confirmado por Chuva</h2>
+    <div class="message">
+      <p>Status: Chuva</p>
+      <ul>
+        <li>Necessário reagendamento devido às condições climáticas</li>
+        <li>Atendimento reagendado e confirmado com cliente para amanhã (04/10), tarde a partir das 14h30</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>💬 Mensagem para Cliente (Chuva - WhatsApp)</h2>
+    <div class="message">
+      <p>Olá, bom dia Sr. Eduardo! Tudo bem?</p>
+      <p>Devido às condições climáticas, será necessário reagendar o atendimento 😥</p>
+      <p>Podemos reagendar para <strong>amanhã (06/06)</strong> no período da manhã, a partir das 08h30?</p>
+      <p><em>Devido à alta demanda, temos disponibilidade a partir dessa data. Caso surja um encaixe, entraremos em contato.</em></p>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>📢 Contato com Cliente para Agendamento</h2>
+    <div class="message">
+      <ul>
+        <li>Deixado recado via WhatsApp solicitando disponibilidade para atendimento</li>
+        <li>Aguardando retorno para agendamento</li>
+      </ul>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>📢 Informe sobre WhatsApp</h2>
+    <div class="message">
+      <p>Olá!</p>
+      <p>Este WhatsApp é exclusivo para agendamento de instalações e reparos.</p>
+      <p>Para outras solicitações, entre em contato pelo telefone ou WhatsApp <strong>(13) 3421-1818</strong></p>
+      <p>Ou acesse: <a href="https://api.whatsapp.com/send?phone=551334211818" target="_blank">Clique aqui para contato</a></p>
+      <p>Obrigada!</p>
+      <button class="copy-btn" onclick="copyText(this)">Copiar</button>
+    </div>
+  </div>
+
+  <script>
+    function copyText(button) {
+      const text = button.parentElement.innerText.replace('Copiar', '').trim();
+      navigator.clipboard.writeText(text).then(() => {
+        button.innerText = 'Copiado!';
+        setTimeout(() => (button.innerText = 'Copiar'), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
